@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Satisfy');
+
+:root {
+	--active: darkorange;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #111;
+	font: 16px 'Fira sans', helvetica, arial, sans-serif;
+}
+
+.scroll {
+	overflow: hidden;
+}
+
+.nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	background: rgb(50, 50, 50);
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 200;
+}
+
+.logo {
+	color: #fff;
+	font: bold 50px 'Satisfy', helvetica, arial, sans-serif;
+	padding-left: 50px;
+	text-shadow: 2px 0 2px rgba(255,255,255,.5);
+}
+
+.logo,
+.links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.links {
+	padding-right: 40px;
+}
+
+.links a {
+	color: #fff;
+	text-decoration: none;
+	margin-right: 10px;
+	padding: 10px;
+	border-radius: 2px;
+}
+
+.links .active {
+	background: var(--active);
+}
+
+.links a:hover {
+	background: #000;
+}
+
+.links .active:hover {
+	background: var(--active);
+}
+
+/*.banner {
+	width: 100%;
+	height: 500px;
+	background: url(../img/banner.png), #fff no-repeat fixed center;
+	background-size: cover;
+	animation: mover__bg 10s linear alternate infinite;
+}*/
+
+/*@keyframes mover__bg {
+	to {
+		background-position: 100%;
+	}
+}*/
+
+.last-v-tl {
+	margin-top: 100px;
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+}
+
+.last-video {
+	width: 50%;
+	min-height: 60vh;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	margin-top: 30px;
+}
+
+.last-video iframe {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #fff;
+}
+
+@media screen and (max-width: 800px) {
+	.nav {
+		flex-direction: column;
+		height: 200px;
+	}
+
+	.logo {
+		padding: 0;
+		padding-top: 10px;
+	}
+
+	.links {
+		padding: 0;
+	}
+
+	.links a {
+		margin-bottom: 50px;
+	}
+
+	.last-v-tl {
+		margin-top: 220px;
+	}
+
+	body .last-video {
+		width: 90%;
+		height: 300px;
+		margin-top: 50px;
+	}
+}
+
+#menu-responsive {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background: rgb(50, 50, 50);
+	border-bottom: 2px solid deepskyblue;
+	display: none;
+	z-index: 200;
+}
+
+#icon-menu {
+	width: 50px;
+	height: 25px;
+	position: relative;
+	cursor: pointer;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.bar-1,
+.bar-2,
+.bar-3 {
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	background: #fff;
+}
+
+.bar-1 {
+	top: 0;
+}
+
+.bar-2 {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.bar-3 {
+	bottom: 0;
+}
+
+#menu {
+	width: 100%;
+	min-height: calc(100vh);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50px;
+	left: -100%;
+	z-index: 200;
+	background: rgb(50, 50, 50);
+	transition: all .3s;
+}
+
+#menu a {
+	color: #fff;
+	text-decoration: none;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 30px;
+	padding: 10px;
+}
+
+#menu a:hover {
+	background: #000;
+}
+
+#menu.alternar-menu {
+	left: 0;
+}
+
+@media screen and (max-width: 500px) {
+	.nav {
+		height: 100px;
+	}
+
+	.links {
+		display: none;
+	}
+
+	#menu-responsive {
+		display: inherit;
+	}
+
+	.last-v-tl {
+		font-size: 30px;
+	}
+
+	.last-video {
+		height: 200px;
+		margin-top: 200px;
+	}
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+	background: #000;
+	border-top: 2px solid rgba(255,255,255,.2);
+	border-bottom: 2px solid rgba(255,255,255,.2);
+	margin-top: 20px;
+}
+
+.icon-1,
+.icon-2 {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #404040;
+	background-repeat: no-repeat;
+	background-position: center;
+	text-decoration: none;
+	transition: all .3s;
+	border: 1px solid transparent;
+}
+
+.icon-1 {
+	margin-right: 50px;
+	background-image: url(../img/fb.png);
+	background-size: 14px;
+}
+
+.icon-2 {
+	background-image: url(../img/yt.png);
+	background-size: 30px;
+}
+
+.icon-1:hover,
+.icon-2:hover {
+	transform: scale(1.1);
+	border: 1px solid #404040;
+}
